@@ -10,7 +10,6 @@ import STORE from './store';
 import {Account,Main} from "./pages/";
 import Login from "./pages/LoginPage";
 import Card from './pages/Card';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {

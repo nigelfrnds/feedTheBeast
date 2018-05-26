@@ -41,7 +41,7 @@ validateForm() {
       <div className="row">
   <div className="col-md-6 col-md-offset-3">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup class="form-horizontal" controlId="email" bsSize="large">
+          <FormGroup className="form-horizontal" controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
               autoFocus
