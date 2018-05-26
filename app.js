@@ -25,6 +25,9 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/users', userRoutes);
+app.use((req, res) => {
+    res.status(404).send({ message: '404 Not Found' });
+});
 
 // app.get('/api/:food', async (req, res) => {
 //     const { food } = req.params;

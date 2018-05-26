@@ -4,8 +4,8 @@ const User = require('../models/user');
 module.exports.registerUser = async (req, res) => {
     try {
         console.log('registerUser: ', req.body);
-        const { email, password } = req.body;
-        let user = await User.createUser({ email, password });
+        const { email, password, name, username } = req.body;
+        let user = await User.createUser({ email, password, name, username });
         let token = await jwt.sign({ user }, process.env.SECRET_KEY);
         res.status(200).send({ user, token });
     } catch (error) {
