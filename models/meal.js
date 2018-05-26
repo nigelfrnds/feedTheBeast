@@ -6,11 +6,14 @@ const MealSchema = new Schema({
     image: { type: String },
     url: { type: String },
     uri: { type: String },
-    calories: { type: String },
+    totalCalories: { type: String },
+    perServingCalories: { type: String },
     ingredientLines: [{
         type: String
     }],
+    category: { type: String },
     type: { type: String }
 });
 
 const Meal = mongoose.model('Meal', MealSchema);
+module.exports = Meal;
