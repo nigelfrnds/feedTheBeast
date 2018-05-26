@@ -4,7 +4,7 @@ import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 class DashboardPage extends Component {
   render() {
     return (
-      <div >
+      <div>
         <p>DashboardPage</p>
       </div>
     );
