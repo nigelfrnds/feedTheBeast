@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from "react-redux";
-
+import {Link} from "react-router-dom";
 import {loginUser} from "../actions";
 class Login extends Component {
 constructor(props) {
@@ -67,7 +67,6 @@ validateForm() {
             Login
           </Button>
         </form>
-
         </div>
         </div>
       </div>
