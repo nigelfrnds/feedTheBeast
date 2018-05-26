@@ -7,8 +7,9 @@ import {
 } from 'react-router-dom';
 
 import STORE from './store';
-import {Login,Account,Main} from "./pages/";
+import { Account,Main } from "./pages/";
 import Card from './pages/Card';
+import Login from "./pages/LoginPage";
 import logo from './logo.svg';
 import './App.css';
 
@@ -32,7 +33,6 @@ class App extends Component {
                 <Route path="/main" exact component = {Main} />
                 <Route path="/account" exact component = {Account} />
                 <Route path="/card" exact component = {Card} />
-
               </div>
           </Router> 
         </div>
