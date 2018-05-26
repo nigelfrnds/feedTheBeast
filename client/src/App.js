@@ -7,9 +7,11 @@ import {
 } from 'react-router-dom';
 
 import STORE from './store';
-import {Account,Main} from "./pages/";
 import Login from "./pages/LoginPage";
-import Card from './pages/Card';
+import Register from "./pages/RegisterPage";
+import Main from "./pages/MainPage";
+import Welcome from "./pages/WelcomePage";
+import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -17,10 +19,10 @@ class App extends Component {
     message: ''
   }
 
-  // componentDidMount() {
-  //   axios.get('/api')
-  //     .then(({ data }) => this.setState({ message: data.message }));
-  // }
+  componentDidMount() {
+    axios.get('/api')
+      .then(({ data }) => this.setState({ message: data.message }));
+  }
 
   render() {
     return (
@@ -29,9 +31,10 @@ class App extends Component {
           <Router>
               <div className = "container-fluid">
                 <Route path="/login" exact component = {Login} />
+                <Route path="/register" exact component = {Register} />
                 <Route path="/main" exact component = {Main} />
-                <Route path="/account" exact component = {Account} />
-                <Route path="/card" exact component = {Card} />
+                <Route path="/welcome" exact component = {Welcome} />
+
               </div>
           </Router> 
         </div>

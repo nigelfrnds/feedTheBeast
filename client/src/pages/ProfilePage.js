@@ -1,15 +1,15 @@
 import React, {Component} from "react";
 import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
-class Account extends Component {
+class Profile extends Component {
 
   render() {
     return (
       <div >
-        <p>Account</p>
+        <p>Profile</p>
       </div>
     );
   }
 }
 
-export {Account}
+export default Profile;
