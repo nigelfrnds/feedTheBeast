@@ -7,8 +7,9 @@ import {
 } from 'react-router-dom';
 
 import STORE from './store';
-
-import logo from './logo.svg';
+import {Account,Main} from "./pages/";
+import Login from "./pages/LoginPage";
+import Card from './pages/Card';
 import './App.css';
 
 class App extends Component {
@@ -16,16 +17,23 @@ class App extends Component {
     message: ''
   }
 
-  componentDidMount() {
-    axios.get('/api')
-      .then(({ data }) => this.setState({ message: data.message }));
-  }
+  // componentDidMount() {
+  //   axios.get('/api')
+  //     .then(({ data }) => this.setState({ message: data.message }));
+  // }
 
   render() {
     return (
       <Provider store={STORE}>
         <div>
-          {`${this.state.message} Daniel`}
+          <Router>
+              <div className = "container-fluid">
+                <Route path="/login" exact component = {Login} />
+                <Route path="/main" exact component = {Main} />
+                <Route path="/account" exact component = {Account} />
+                <Route path="/card" exact component = {Card} />
+              </div>
+          </Router> 
         </div>
       </Provider>
     );
