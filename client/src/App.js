@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import STORE from './store';
-
+import Login from "./pages/LoginPage";
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,7 +25,11 @@ class App extends Component {
     return (
       <Provider store={STORE}>
         <div>
-          {`${this.state.message} Daniel`}
+          <Router>
+              <div className = "container-fluid">
+                <Route path="/login" exact component = {Login} />
+              </div>
+          </Router> 
         </div>
       </Provider>
     );
