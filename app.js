@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const axios = require('axios');
 
 const userRoutes = require('./routes/user');
+const mealScheduleRoutes = require('./routes/mealSchedule');
+const mealRoutes = require('./routes/meal');
 
 const app = express();
 
@@ -25,16 +27,20 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/users', userRoutes);
+app.use('/schedules', mealScheduleRoutes);
+app.use('/meals', mealRoutes);
+
+app.get('/api/:food', async (req, res) => {
+    const { food } = req.params;
+    const { APP_ID, APP_KEY } = process.env;
+
+    const { data: { hits }, status } = await axios.get(`https://api.edamam.com/search?q=chicken&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
+    res.send({ message: hits[0], length: hits.length });
+});
+
 app.use((req, res) => {
     res.status(404).send({ message: '404 Not Found' });
 });
 
-// app.get('/api/:food', async (req, res) => {
-//     const { food } = req.params;
-//     const { APP_ID, APP_KEY } = process.env;
-
-//     const { data: { hits } } = await axios.get(`https://api.edamam.com/search?q=chicken&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
-//     res.send({ message: hits[0] });
-// });
 
 module.exports = app;
