@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
-export default class Login extends Component {
+class Login extends Component {
 constructor(props) {
     super(props);
 
@@ -26,9 +26,12 @@ validateForm() {
   }
   render() {
     return (
-      <div >
+
+      <div class="container center-block">
+      <div class="row">
+  <div class="col-md-6 col-md-offset-3">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
+          <FormGroup class="form-horizontal" controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
               autoFocus
@@ -45,7 +48,9 @@ validateForm() {
               type="password"
             />
           </FormGroup>
-          <Button
+          
+        </form>
+        <Button
             block
             bsSize="large"
             disabled={!this.validateForm()}
@@ -53,8 +58,11 @@ validateForm() {
           >
             Login
           </Button>
-        </form>
+        </div>
+        </div>
       </div>
     );
   }
 }
+
+export {Login}
