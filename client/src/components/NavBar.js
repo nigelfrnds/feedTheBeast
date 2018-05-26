@@ -7,7 +7,7 @@ const NavBar = () => {
         <nav className="navbar navbar-inverse bg-inverse navbar-fixed-top">
             <div className="container">
                 <div className="navbar-header nav-flex">
-                    <Link to="/welcome" className="navbar-brand">
+                    <Link to="/" className="navbar-brand">
                         <strong>
                             <img className="logo" align="left" src="./images/logo.jpg" alt="react-logo"/>
                             FTB
