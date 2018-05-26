@@ -32,7 +32,7 @@ module.exports.loginUser = async (req, res) => {
         } else {
             res.status(400).send({ message: 'Incorrect email/password' });
         }
-        res.status(200).send({ message: 'loginUser' });
+        
     } catch (error) {
         console.log('loginUser error: ', error);
         res.status(400).send({ message: error });

@@ -6,7 +6,7 @@ const Card = (props) => {
       <div className="card-body">
         <h4 className="card-title">{props.title}</h4>
         <p className="card-text"  style={styles.contentStyle}>{props.children}</p>
-        <Image source={{uri: props.url}} className="btn btn-primary"/>
+        <img source={{uri: props.url}} className="btn btn-primary"/>
       </div>
     </div>
   );
