@@ -10,7 +10,6 @@ import STORE from './store';
 import {Account,Main} from "./pages/";
 import Login from "./pages/LoginPage";
 import Card from './pages/Card';
-import Login from "./pages/LoginPage";
 import logo from './logo.svg';
 import './App.css';
 
