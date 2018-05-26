@@ -26,12 +26,9 @@ validateForm() {
   }
   render() {
     return (
-
-      <div class="container center-block">
-      <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+      <div >
         <form onSubmit={this.handleSubmit}>
-          <FormGroup class="form-horizontal" controlId="email" bsSize="large">
+          <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
               autoFocus
@@ -48,9 +45,7 @@ validateForm() {
               type="password"
             />
           </FormGroup>
-          
-        </form>
-        <Button
+          <Button
             block
             bsSize="large"
             disabled={!this.validateForm()}
@@ -58,11 +53,8 @@ validateForm() {
           >
             Login
           </Button>
-        </div>
-        </div>
+        </form>
       </div>
     );
   }
 }
-
-export {Login}
