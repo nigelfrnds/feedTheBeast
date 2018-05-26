@@ -7,12 +7,15 @@ import {
 } from 'react-router-dom';
 
 import STORE from './store';
-import { Account, Main } from "./pages/";
 
 import Login from "./pages/LoginPage";
-import Card from './pages/Card';
+import Register from "./pages/RegisterPage";
+import Main from "./pages/MainPage";
+import Welcome from "./pages/WelcomePage";
 
 import NavBar from './components/NavBar';
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   render() {
@@ -22,11 +25,11 @@ class App extends Component {
           <Router>
             <div>
               <NavBar />
-              <div className = "container-fluid" style={{ marginTop: "5rem" }}>
-                  <Route path="/login" exact component={Login} />
-                  <Route path="/main" exact component={Main} />
-                  <Route path="/account" exact component={Account} />
-                  <Route path="/card" exact component={Card} />
+              <div className = "container-fluid" style={{ marginTop: "7rem" }}>
+                <Route path="/login" exact component={Login} />
+                <Route path="/register" exact component={Register} />
+                <Route path="/main" exact component={Main} />
+                <Route path="/welcome" exact component={Welcome} />
               </div>
             </div>
           </Router> 
