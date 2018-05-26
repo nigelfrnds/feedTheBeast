@@ -9,8 +9,8 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send({ message: 'herro' });
-}); 
+app.get('/api', (req, res) => {
+    res.status(200).send({ message: 'fuck you1' });
+});
 
 module.exports = app;

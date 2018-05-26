@@ -24,6 +24,7 @@
   "homepage": "https://github.com/nigelfrnds/feedTheBeast#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.1.2",
