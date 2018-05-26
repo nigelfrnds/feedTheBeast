@@ -7,19 +7,26 @@ class WelcomePage extends Component {
 
   render() {
     return (
-    <div>
-      <div >
+  <div className="container center-block">
+  <div className="row">
+  <div className="col-md-6 col-md-offset-3">
+      <div>
+        <img className="center-block form-group" src="./images/logo.jpg" alt="react-logo"/>
+      </div>
+      <div className="text-center form-group">
         <h1>Welcome to Feed The Beast</h1>
       </div>
-      <div>
-          <p>Make you weekly meal plan</p>
+      <div className="text-center form-group"> 
+        <h3>Make you weekly meal plan</h3>
       </div>
-      <div>
-      <Link to ="/login" className="btn btn-primary">Login</Link>
+      <div className = " form-group"> 
+        <Link to ="/login" className="btn btn-default btn-lg btn-block">Login</Link>
       </div>
-      <div>
-      <Link to ="/register" className="btn btn-primary">Register</Link>
+      <div className = "top-buffer">
+        <Link to ="/register" className="btn btn-default btn-lg btn-block">Register</Link>
       </div>
+    </div>
+    </div>
     </div>
     );
   }
