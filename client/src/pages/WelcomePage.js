@@ -3,7 +3,7 @@ import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
-class Welcome extends Component {
+class WelcomePage extends Component {
 
   render() {
     return (
@@ -25,4 +25,4 @@ class Welcome extends Component {
   }
 }
 
-export default Welcome;
+export default WelcomePage;

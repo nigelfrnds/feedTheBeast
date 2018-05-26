@@ -3,7 +3,8 @@ import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {loginUser} from "../actions";
-class Login extends Component {
+
+class LoginPage extends Component {
 constructor(props) {
     super(props);
 
@@ -78,4 +79,4 @@ const mapStateToProps = state =>{
   console.log("mstp: ",state);
 };
 
-export default connect(mapStateToProps, { loginUser })(Login);
+export default connect(mapStateToProps, { loginUser })(LoginPage);

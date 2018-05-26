@@ -8,10 +8,10 @@ import {
 
 import STORE from './store';
 
-import Login from "./pages/LoginPage";
-import Register from "./pages/RegisterPage";
-import Main from "./pages/MainPage";
-import Welcome from "./pages/WelcomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import DashboardPage from "./pages/DashboardPage";
+import WelcomePage from "./pages/WelcomePage";
 
 import NavBar from './components/NavBar';
 import logo from './logo.svg';
@@ -26,10 +26,10 @@ class App extends Component {
             <div>
               <NavBar />
               <div className = "container-fluid" style={{ marginTop: "7rem" }}>
-                <Route path="/" exact component={Welcome} />
-                <Route path="/login" exact component={Login} />
-                <Route path="/register" exact component={Register} />
-                <Route path="/main" exact component={Main} />
+                <Route path="/" exact component={WelcomePage} />
+                <Route path="/login" exact component={LoginPage} />
+                <Route path="/register" exact component={RegisterPage} />
+                <Route path="/main" exact component={DashboardPage} />
               </div>
             </div>
           </Router> 

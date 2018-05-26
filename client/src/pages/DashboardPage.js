@@ -1,15 +1,14 @@
 import React, {Component} from "react";
 import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
-class Main extends Component {
-
+class DashboardPage extends Component {
   render() {
     return (
       <div >
-        <p>Main</p>
+        <p>DashboardPage</p>
       </div>
     );
   }
 }
 
-export default Main;
+export default DashboardPage;

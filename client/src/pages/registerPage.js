@@ -3,7 +3,8 @@ import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import {RegisterUser} from "../actions";
-class Register extends Component {
+
+class RegisterPage extends Component {
 constructor(props) {
     super(props);
 
@@ -97,4 +98,4 @@ const mapStateToProps = state =>{
   console.log("mstp: ",state);
 };
 
-export default connect(mapStateToProps, { RegisterUser })(Register);
+export default connect(mapStateToProps, { RegisterUser })(RegisterPage);
