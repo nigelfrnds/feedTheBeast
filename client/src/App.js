@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom';
 
 import STORE from './store';
-import {Login,Account,Main} from "./pages/";
+import {Account,Main} from "./pages/";
+import Login from "./pages/LoginPage";
 import Card from './pages/Card';
 import logo from './logo.svg';
 import './App.css';
@@ -17,10 +18,10 @@ class App extends Component {
     message: ''
   }
 
-  componentDidMount() {
-    axios.get('/api')
-      .then(({ data }) => this.setState({ message: data.message }));
-  }
+  // componentDidMount() {
+  //   axios.get('/api')
+  //     .then(({ data }) => this.setState({ message: data.message }));
+  // }
 
   render() {
     return (

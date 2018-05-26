@@ -1,9 +1,7 @@
 import React, {Component} from "react";
 import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import {connect} from "react-redux";
 
-import {loginUser} from "../actions";
-class Login extends Component {
+class Register extends Component {
 constructor(props) {
     super(props);
 
@@ -13,9 +11,6 @@ constructor(props) {
     };
 }
 
-componentDidMount(){
-  console.log(this.props);
-}
 validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
@@ -28,11 +23,6 @@ validateForm() {
 
   handleSubmit = event => {
     event.preventDefault();
-    const { loginUser, history } = this.props;
-    const { email, password } = this.state;
-    console.log('submit: ', email, password);
-
-    loginUser(email, password, () => this.props.history.push("/main"));
   }
   render() {
     return (
@@ -58,7 +48,9 @@ validateForm() {
               type="password"
             />
           </FormGroup>
-          <Button
+          
+        </form>
+        <Button
             block
             bsSize="large"
             disabled={!this.validateForm()}
@@ -66,8 +58,6 @@ validateForm() {
           >
             Login
           </Button>
-        </form>
-
         </div>
         </div>
       </div>
@@ -75,8 +65,4 @@ validateForm() {
   }
 }
 
-const mapStateToProps = state =>{
-  console.log("mstp: ",state);
-};
-
-export default connect(mapStateToProps, { loginUser })(Login);
+export default Register;
