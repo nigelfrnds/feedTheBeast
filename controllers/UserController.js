@@ -38,3 +38,19 @@ module.exports.loginUser = async (req, res) => {
         res.status(400).send({ message: error });
     }
 };
+
+module.exports.getUser = async (req, res) => {
+    try {
+        console.log('getUser: ', req.user);
+        let { user } = req;
+
+        let updatedUser = await User.findOne({ _id: user._id });
+
+        let token = await jwt.sign({ user: updatedUser }, process.env.SECRET_KEY);
+        
+        res.status(200).send({ user: updatedUser, token });
+    } catch (error) {
+        console.log('getUser error: ', error);
+        res.status(400).send({ message: error });
+    }
+};

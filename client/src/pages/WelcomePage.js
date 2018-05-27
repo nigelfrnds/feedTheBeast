@@ -3,7 +3,12 @@ import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
+import { tokenLogin, removeAuthToken } from '../actions';
+
 class WelcomePage extends Component {
+  componentDidMount() {
+    this.props.tokenLogin(() => this.props.history.push('/dashboard'));
+  }
 
   render() {
     return (
@@ -32,4 +37,4 @@ class WelcomePage extends Component {
   }
 }
 
-export default WelcomePage;
+export default connect(null, { tokenLogin })(WelcomePage);
