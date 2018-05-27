@@ -17,7 +17,7 @@ class WelcomePage extends Component {
         <h1>Welcome to Feed The Beast</h1>
       </div>
       <div className="text-center form-group"> 
-        <h3>Make you weekly meal plan</h3>
+        <h3>Make your weekly meal plan</h3>
       </div>
       <div className = " form-group"> 
         <Link to ="/login" className="btn btn-default btn-lg btn-block">Login</Link>
