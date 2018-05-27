@@ -44,7 +44,7 @@ validateForm() {
       <div className="row">
   <div className="col-md-6 col-md-offset-3">
         <form onSubmit={this.handleSubmit}>
-          
+
           <FormGroup controlId="username" bsSize="large">
             <ControlLabel>Username</ControlLabel>
             <FormControl
