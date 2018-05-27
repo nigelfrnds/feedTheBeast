@@ -26,7 +26,7 @@ class App extends Component {
           <Router>
             <div>
               <NavBar />
-              <div className = "container-fluid" style={{ marginTop: "7rem" }}>
+              <div className = "container-fluid" style={{ marginTop: "6rem" }}>
                 <Route path="/" exact component={WelcomePage} />
                 <Route path="/login" exact component={LoginPage} />
                 <Route path="/register" exact component={RegisterPage} />
