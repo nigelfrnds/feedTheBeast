@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import WelcomePage from "./pages/WelcomePage";
+import GroceryPage from './pages/GroceryPage';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
@@ -26,11 +27,11 @@ class App extends Component {
           <Router>
             <div>
               <NavBar />
-              <div className = "container-fluid" style={{ marginTop: "7rem" }}>
+              <div className = "container-fluid" style={{ marginTop: "6rem" }}>
                 <Route path="/" exact component={WelcomePage} />
                 <Route path="/login" exact component={LoginPage} />
                 <Route path="/register" exact component={RegisterPage} />
-                <Route path="/main" exact component={DashboardPage} />
+                <Route path="/dashboard" exact component={DashboardPage} />
               </div>
               <Footer/>
             </div>
