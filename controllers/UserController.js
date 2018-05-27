@@ -1,11 +1,22 @@
 const jwt = require('jsonwebtoken');
+const moment = require('moment');
+
 const User = require('../models/user');
+const MealSchedule = require('../models/mealSchedule');
 
 module.exports.registerUser = async (req, res) => {
     try {
         console.log('registerUser: ', req.body);
         const { email, password, name, username } = req.body;
         let user = await User.createUser({ email, password, name, username });
+
+        let currentDate = moment().startOf('day');
+        let schedule = new MealSchedule({
+            userId: user._id,
+            date: currentDate
+        });
+
+        await schedule.save();
         let token = await jwt.sign({ user }, process.env.SECRET_KEY);
         res.status(200).send({ user, token });
     } catch (error) {
