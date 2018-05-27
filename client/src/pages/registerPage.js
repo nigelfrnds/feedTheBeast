@@ -94,8 +94,5 @@ validateForm() {
   }
 }
 
-const mapStateToProps = state =>{
-  console.log("mstp: ",state);
-};
 
-export default connect(mapStateToProps, { RegisterUser })(RegisterPage);
+export default connect(null, { RegisterUser })(RegisterPage);

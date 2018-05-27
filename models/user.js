@@ -6,7 +6,9 @@ const UserSchema = new Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     username: { type: String },
-    name: { type: String }
+    name: { type: String },
+    active: { type: Boolean, default: false },
+    dailyCalorieGoal: { type: Number }
 });
 
 const User = mongoose.model('User', UserSchema);

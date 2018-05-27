@@ -1,16 +1,19 @@
 const moment = require('moment');
+const User = require('../models/user');
 const MealSchedule = require('../models/mealSchedule');
 const Meal = require('../models/meal');
 
 module.exports.createSchedule = async(req, res) => {
     try {
         console.log('createSchedule: ', req.body);
-        const { userId } = req.body; 
+        const { userId, dailyCalorieGoal } = req.body; 
         let currentDate = moment().startOf('day');
 
-        let meals = await Meal.find({ category: 'chicken' });
-        
-        let mealSchedule = new MealSchedule({
+        let user = await User.findOneAndUpdate({ _id: userId }, { active: true }, { new: true });
+
+        let meals = await Meal.find({ perServingCalories: 500 }).limit(4);
+
+        let schedule = new MealSchedule({
             userId,
             date: currentDate,
             sun: meals,
@@ -22,9 +25,10 @@ module.exports.createSchedule = async(req, res) => {
             sat: meals
         });
 
+        await schedule.save();
 
-        await mealSchedule.save();
-        res.status(200).send({ mealSchedule });
+        res.status(200).send({ schedule, user });
+
     } catch (error) {
         console.log('createSchedule error: ', error);
         res.status(400).send({ message: error });

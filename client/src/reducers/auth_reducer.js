@@ -18,6 +18,11 @@ export default function(state = {}, action) {
                 user: action.payload.user,
                 token: action.payload.token
             };
+        case 'ACTIVATE_USER':
+            return {
+                ...state,
+                user: action.payload.user
+            };
         case 'LOGOUT_USER':
             return state={};
         default:

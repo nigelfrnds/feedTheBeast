@@ -51,6 +51,24 @@
     flex-wrap: wrap;
 }
 
+.preferenece__container {
+    width: 100%;
+    margin-right: 1rem;
+}
+
+.preference-heading__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.preference-body__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .day__container {
     width: 25%;
     margin: 1rem;
@@ -90,4 +108,5 @@
 .meal-item-button:hover {
     cursor: pointer;
 }
+
 
