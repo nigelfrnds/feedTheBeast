@@ -1,0 +1,112 @@
+.logo {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    margin-top: -3px;
+    margin-right: 5px;
+}
+
+.food-img {
+    height: 3rem;
+    widows: 3rem;
+    border-radius: 50%;
+}
+
+.dashboard__container {
+    display: flex;
+    flex-direction: row;
+    margin-left: -1rem;
+    margin-right: 1rem;
+}
+
+.profile__container {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 25%;
+}
+
+.profile-body__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule__container {
+    width: 100%;
+    margin-right: 1rem;
+}
+
+.schedule-heading__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.schedule-body__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.preferenece__container {
+    width: 100%;
+    margin-right: 1rem;
+}
+
+.preference-heading__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.preference-body__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.day__container {
+    width: 25%;
+    margin: 1rem;
+}
+
+.day-body__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-item-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+}
+
+.meal-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.meal-item-button:hover {
+    cursor: pointer;
+}
+
+
