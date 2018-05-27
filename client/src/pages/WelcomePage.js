@@ -11,7 +11,7 @@ class WelcomePage extends Component {
   <div className="row">
   <div className="col-md-6 col-md-offset-3">
       <div>
-        <img className="center-block form-group" src="./images/logo.jpg" alt="react-logo"/>
+        <img className="center-block form-group" src="./images/logo_2.png" alt="react-logo"/>
       </div>
       <div className="text-center form-group">
         <h1>Welcome to Feed The Beast</h1>

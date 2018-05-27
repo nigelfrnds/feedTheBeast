@@ -33,7 +33,7 @@ validateForm() {
     const { email, password } = this.state;
     console.log('submit: ', email, password);
 
-    loginUser(email, password, () => this.props.history.push("/main"));
+    loginUser(email, password, () => this.props.history.push("/dashboard"));
   }
   render() {
     return (

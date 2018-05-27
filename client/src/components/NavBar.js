@@ -12,7 +12,7 @@ class NavBar extends Component {
                     <div className="navbar-header">
                         <Link to="/" className="navbar-brand">
                             <strong>
-                                <img className="logo" align="left" src="./images/logo.jpg" alt="react-logo"/>
+                                <img className="logo" align="left" src="./images/logo_2.png" alt="react-logo"/>
                                 FTB
                             </strong>
                         </Link>
@@ -25,7 +25,7 @@ class NavBar extends Component {
                     </div>
                     <div className="nav-container" id="collapsible"> 
                             <ul className="nav navbar-nav navbar-left">
-                                <li className="nav-item"><Link to="/main">Dashboard</Link></li>
+                                <li className="nav-item"><Link to="/dashboard">Dashboard</Link></li>
                             </ul>
                     </div>
                     <div className="pull-right nav-container" id="collapsible">
