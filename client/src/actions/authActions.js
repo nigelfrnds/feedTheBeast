@@ -36,7 +36,7 @@ export const loginUser = (email,password,callback) => async(dispatch) =>{
     }
 };
 
-export const tokenLogin = (callback) => async (dispatch) => {
+export const tokenLogin = () => async (dispatch) => {
     try {
         let token = await fetchAuthToken();
         if(token) {
@@ -54,7 +54,6 @@ export const tokenLogin = (callback) => async (dispatch) => {
                     token: data.token
                 }
             });
-            callback();
         } else {
             console.log('no token');
         }
@@ -68,7 +67,7 @@ export const logoutUser = (callback) => async (dispatch) => {
         await removeAuthToken();
         dispatch({
             type: 'LOGOUT_USER'
-        })
+        });
         callback();
     } catch (error) {
         console.log('logoutUser error: ', error);
