@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const axios = require('axios');
 const path = require('path');
+const cors = require('cors');
 
 const userRoutes = require('./routes/user');
 const mealScheduleRoutes = require('./routes/mealSchedule');
@@ -18,7 +19,8 @@ mongoose.connect(process.env.MONGO_CONFIG);
 const db = mongoose.connection
     .once('open', () => console.log('Connected to MongoDB'))
     .on('error', error => console.warn('Warning: ', error));
-
+    
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
