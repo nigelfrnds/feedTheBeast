@@ -23,21 +23,21 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/api', (req, res) => {
-    res.status(200).send({ message: 'fuck you1' });
-});
+// app.get('/api', (req, res) => {
+//     res.status(200).send({ message: 'fuck you1' });
+// });
 
 app.use('/users', userRoutes);
 app.use('/schedules', mealScheduleRoutes);
 app.use('/meals', mealRoutes);
 
-app.get('/api/:food', async (req, res) => {
-    const { food } = req.params;
-    const { APP_ID, APP_KEY } = process.env;
-
-    const { data: { hits }, status } = await axios.get(`https://api.edamam.com/search?q=chicken&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
-    res.send({ message: hits[0], length: hits.length });
-});
+// app.get('/api/:food', async (req, res) => {
+//     const { food } = req.params;
+//     const { APP_ID, APP_KEY } = process.env;
+//
+//     const { data: { hits }, status } = await axios.get(`https://api.edamam.com/search?q=chicken&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
+//     res.send({ message: hits[0], length: hits.length });
+// });
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
