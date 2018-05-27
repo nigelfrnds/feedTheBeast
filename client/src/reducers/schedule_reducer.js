@@ -5,6 +5,11 @@ export default function(state={}, action){
                 ...state,
                 schedule: action.payload.schedule
             };
+        case 'CREATE_SCHEDULE':
+            return {
+                ...state,
+                schedule: action.payload.schedule
+            };
         default:
             return state;
     }
