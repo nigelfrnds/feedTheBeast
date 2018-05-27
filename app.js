@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 app.use('/users', userRoutes);
 app.use('/schedules', mealScheduleRoutes);
 app.use('/meals', mealRoutes);
+app.use(express.static(path.join(__dirname, 'client', 'build', 'index.html' )));
 
 // app.get('/api/:food', async (req, res) => {
 //     const { food } = req.params;
