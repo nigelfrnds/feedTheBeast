@@ -3,13 +3,14 @@ import {Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 
-import { tokenLogin, removeAuthToken } from '../actions';
-
 class WelcomePage extends Component {
   componentDidMount() {
-    this.props.tokenLogin(() => this.props.history.push('/dashboard'));
-  }
+    const { user } = this.props;
 
+    if(user !== undefined) {
+      this.props.history.push('/dashboard');
+    }
+  }
   render() {
     return (
   <div className="container center-block">
@@ -37,4 +38,8 @@ class WelcomePage extends Component {
   }
 }
 
-export default connect(null, { tokenLogin })(WelcomePage);
+const mapStateToProps = ({ auth }) => {
+  return { user: auth.user };
+};
+
+export default connect(mapStateToProps, null)(WelcomePage);

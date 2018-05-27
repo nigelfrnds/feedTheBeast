@@ -25,17 +25,12 @@ class NavBar extends Component {
                             <span className="icon-bar"></span>
                         </button>
                     </div>
-                    <div className="nav-container" id="collapsible"> 
-                            <ul className="nav navbar-nav navbar-left">
-                                <li className="nav-item"><Link to="/dashboard">Dashboard</Link></li>
-                            </ul>
-                    </div>
                     <div className="pull-right nav-container" id="collapsible">
                         {user ? 
                             <ul className="nav navbar-nav navbar-right">
                                 <li className="nav-item"><Link to="/profile">Profile</Link></li>
                                 <li className="nav-item">
-                                    <Link onClick={() => this.props.logoutUser()} to="/">Logout</Link>
+                                    <Link to="/logout">Logout</Link>
                                 </li>
                             </ul>
                             : 
