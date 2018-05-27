@@ -3,6 +3,8 @@ import { Navbar, NavItem, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import { logoutUser } from '../actions';
+
 class NavBar extends Component {
     render() {
         const { user } = this.props;
@@ -31,7 +33,10 @@ class NavBar extends Component {
                     <div className="pull-right nav-container" id="collapsible">
                         {user ? 
                             <ul className="nav navbar-nav navbar-right">
-                                <li className="nav-item"><Link to="/">Profile</Link></li>
+                                <li className="nav-item"><Link to="/profile">Profile</Link></li>
+                                <li className="nav-item">
+                                    <Link onClick={() => this.props.logoutUser()} to="/">Logout</Link>
+                                </li>
                             </ul>
                             : 
                             <ul className="nav navbar-nav navbar-right">
@@ -51,4 +56,4 @@ const mapStateToProps = ({ auth }) => {
     return { user: auth.user };
 };
 
-export default connect(mapStateToProps, null)(NavBar);
+export default connect(mapStateToProps, { logoutUser })(NavBar);
