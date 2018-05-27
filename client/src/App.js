@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import WelcomePage from "./pages/WelcomePage";
+import GroceryPage from './pages/GroceryPage';
 
 import NavBar from './components/NavBar';
 import logo from './logo.svg';

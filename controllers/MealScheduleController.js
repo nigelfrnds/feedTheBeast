@@ -36,13 +36,14 @@ module.exports.getSchedule = async (req, res) => {
         console.log('getSchedule: ', req.params);
         const { userId } = req.params;
         let mealSchedule = await MealSchedule.findOne({ userId })
-            .populate('sun')
-            .populate('mon')
-            .populate('tue')
-            .populate('wed')
-            .populate('thu')
-            .populate('fri')
-            .populate('sat');
+            .populate({ path: 'sun', options: { limit: 4 }})
+            .populate({ path: 'mon', options: { limit: 4 }})
+            .populate({ path: 'tue', options: { limit: 4 }})
+            .populate({ path: 'wed', options: { limit: 4 }})
+            .populate({ path: 'thu', options: { limit: 4 }})
+            .populate({ path: 'fri', options: { limit: 4 }})
+            .populate({ path: 'sat', options: { limit: 4 }});
+            
             
         res.status(200).send({ mealSchedule });
     } catch (error) {
