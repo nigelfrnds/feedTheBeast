@@ -35,7 +35,7 @@ validateForm() {
     const { email, password, username, name } = this.state;
     console.log('submit: ', email, password, username, name);
 
-    RegisterUser(email, password, username, name, () => this.props.history.push("/main"));
+    RegisterUser(email, password, username, name, () => this.props.history.push("/dashboard"));
   }
   render() {
     return (
