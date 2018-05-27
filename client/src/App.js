@@ -14,6 +14,7 @@ import DashboardPage from "./pages/DashboardPage";
 import WelcomePage from "./pages/WelcomePage";
 
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import logo from './logo.svg';
 import './App.css';
 
@@ -31,6 +32,7 @@ class App extends Component {
                 <Route path="/register" exact component={RegisterPage} />
                 <Route path="/main" exact component={DashboardPage} />
               </div>
+              <Footer/>
             </div>
           </Router> 
         </div>

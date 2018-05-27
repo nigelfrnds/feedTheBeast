@@ -23,7 +23,12 @@ class NavBar extends Component {
                             <span className="icon-bar"></span>
                         </button>
                     </div>
-                    <div className="collapse navbar-collapse" id="collapsible">
+                    <div className="nav-container" id="collapsible"> 
+                            <ul className="nav navbar-nav navbar-left">
+                                <li className="nav-item"><Link to="/main">Dashboard</Link></li>
+                            </ul>
+                    </div>
+                    <div className="pull-right nav-container" id="collapsible">
                         {user ? 
                             <ul className="nav navbar-nav navbar-right">
                                 <li className="nav-item"><Link to="/">Profile</Link></li>
