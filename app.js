@@ -4,6 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const axios = require('axios');
+const path = require('path');
 
 const userRoutes = require('./routes/user');
 const mealScheduleRoutes = require('./routes/mealSchedule');
@@ -36,6 +37,9 @@ app.get('/api/:food', async (req, res) => {
 
     const { data: { hits }, status } = await axios.get(`https://api.edamam.com/search?q=chicken&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`);
     res.send({ message: hits[0], length: hits.length });
+});
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
 app.use((req, res) => {
