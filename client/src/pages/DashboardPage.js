@@ -3,11 +3,19 @@ import {Button, FormGroup, FormControl, ControlLabel, Panel, ListGroup, ListGrou
 import { connect } from 'react-redux';
 
 import { fetchSchedule } from '../actions';
-import Sidebar from '../components/SideBar';
+import DayCard from '../components/DayCard';
 
 const DAYS = ['sun','mon','tue','wed', 'thu', 'fri', 'sat'];
 
 class DashboardPage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: false
+    }
+  }
+
   async componentDidMount() {
     const { fetchSchedule, user, token } = this.props;
     if(user) {
@@ -18,29 +26,9 @@ class DashboardPage extends Component {
   renderSchedule = () => {
     const { schedule } = this.props;
     if(schedule !== undefined) {
-      console.log('renderSchedule: ', schedule);
       return DAYS.map((day, index) => {
-        console.log('\nmeals: ', day, schedule[day]);
         return (
-          <Panel className="day__container" key={index}>
-            <Panel.Heading>{`${day.substring(0,1).toUpperCase()}${day.substring(1)}`}</Panel.Heading>
-            <Panel.Body className="day-body__container">
-              <ListGroup>
-                {
-                  schedule[day].map((meal) => {
-                    return (
-                      <ListGroupItem key={meal._id}>
-                        <div className="meal-item">
-                          <img src={meal.image} className="food-img" />
-                          <p>{meal.label}</p>
-                        </div>
-                      </ListGroupItem>
-                    );
-                  })
-                }
-              </ListGroup>
-            </Panel.Body>
-          </Panel>
+          <DayCard day={day} meals={schedule[day]} key={index} />
         );
       });
     } else {

@@ -9,6 +9,7 @@
 .food-img {
     height: 3rem;
     widows: 3rem;
+    border-radius: 50%;
 }
 
 .dashboard__container {
@@ -65,6 +66,28 @@
 .meal-item {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-item-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+}
+
+.meal-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.meal-item-button:hover {
+    cursor: pointer;
 }
 
