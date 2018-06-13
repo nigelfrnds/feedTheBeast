@@ -11,12 +11,12 @@ module.exports.registerUser = async (req, res) => {
         let user = await User.createUser({ email, password, name, username });
 
         let currentDate = moment().startOf('day');
-        let schedule = new MealSchedule({
-            userId: user._id,
-            date: currentDate
-        });
+        // let schedule = new MealSchedule({
+        //     userId: user._id,
+        //     date: currentDate
+        // });
 
-        await schedule.save();
+        // await schedule.save();
         let token = await jwt.sign({ user }, process.env.SECRET_KEY);
         res.status(200).send({ user, token });
     } catch (error) {

@@ -12,7 +12,8 @@ const mealRoutes = require('./routes/meal');
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_CONFIG);
+//mongoose.connect(process.env.MONGO_CONFIG);
+mongoose.connect('mongodb://localhost/myapp');
 
 const db = mongoose.connection
     .once('open', () => console.log('Connected to MongoDB'))
